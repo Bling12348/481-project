@@ -1,3 +1,30 @@
+let productData = [];
+let cart = [];
+let activeSession;
+
+initApp();
+
+function initApp() {
+  fetch("/Cart/items.json")
+  .then(response => response.json())
+  .then(data => {
+    productData = data;
+    sessionStorage.setItem('productData', JSON.stringify(productData))
+    console.log(productData);
+    sessionStorage.setItem("cart", "")
+    sessionStorage.setItem('cart', JSON.stringify(cart))
+  });
+}
+
+function addToCart(itemId) {
+  let inventory = JSON.parse(sessionStorage.getItem("productData"))
+  index = cart.length
+
+  cart.push(inventory[itemId-1])
+  sessionStorage.setItem('cart', JSON.stringify(cart))
+  index++
+}
+
 /* Tiny cart badge demo using localStorage per-page key */
 (function(){
   const key = location.pathname.split('/').pop() || 'index.html';
@@ -22,16 +49,3 @@
     }
   });
 })();
-
-let productData;
-
-function initApp() {
-  fetch("/Cart/items.json")
-  .then(response => response.json())
-  .then(data => {
-    productData = data;
-    console.log(productData);
- });
-}
-
-initApp();
