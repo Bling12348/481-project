@@ -5,18 +5,15 @@ let activeSession;
 initApp();
 
 function initApp() {
-  activeSession = sessionStorage.getItem('activeSession')
-  if (activeSession == 0){
-    fetch("/Cart/items.json")
-    .then(response => response.json())
-    .then(data => {
-      productData = data;
-      sessionStorage.setItem('productData', JSON.stringify(productData))
-      console.log(productData);
-      sessionStorage.setItem("cart", "")
-      sessionStorage.setItem('cart', JSON.stringify(cart))
-    });
-  }
+  fetch("/Cart/items.json")
+  .then(response => response.json())
+  .then(data => {
+    productData = data;
+    sessionStorage.setItem('productData', JSON.stringify(productData))
+    console.log(productData);
+    sessionStorage.setItem("cart", "")
+    sessionStorage.setItem('cart', JSON.stringify(cart))
+  });
 }
 
 function addToCart(itemId) {
