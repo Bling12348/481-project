@@ -1,0 +1,50 @@
+/* Matching green from burgers.html */
+.bg-green {
+    background-color: #006644 !important;
+}
+
+/* Header section */
+.dashboard-header {
+    background: linear-gradient(rgba(0, 102, 68, 0.8), rgba(0, 102, 68, 0.8)),
+                url('https://images.unsplash.com/photo-1603048297172-059e719c0a02?auto=format&fit=crop&w=1400&q=80');
+    background-size: cover;
+    background-position: center;
+    padding: 80px 0;
+    text-align: center;
+}
+
+/* Dashboard Cards */
+.dashboard-card {
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.dashboard-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.25);
+}
+
+.card-icon {
+    font-size: 40px;
+    color: #006644;
+}
+.login-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f0f0f0;
+}
+
+.login-box {
+    width: 300px;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.2);
+    text-align: center;
+}
+
