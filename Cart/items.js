@@ -1,0 +1,122 @@
+const items = [
+  {
+    "id": 1,
+    "name": "Campus Classic",
+    "price": 7.99
+  },
+  {
+    "id": 2,
+    "name": "Spicy Chichecn",
+    "price": 8.49
+  },
+  {
+    "id": 3,
+    "name": "Veggie Stick",
+    "price": 8.25
+  },
+  {
+    "id": 4,
+    "name": "Loaded Fries",
+    "price": 4.5
+  },
+  {
+    "id": 5,
+    "name": "Onion Rings",
+    "price": 3.75
+  },
+  {
+    "id": 6,
+    "name": "Classic Shake",
+    "price": 3.95
+  },
+  {
+    "id": 7,
+    "name": "Classic Latte",
+    "price": 3.95
+  },
+  {
+    "id": 8,
+    "name": "Avacado Toast",
+    "price": 6.5
+  },
+  {
+    "id": 9,
+    "name": "Blueberry Muffin",
+    "price": 2.95
+  },
+  {
+    "id": 10,
+    "name": "Cold Brew",
+    "price": 4.25
+  },
+  {
+    "id": 11,
+    "name": "Greek Yogurt",
+    "price": 4.95
+  },
+  {
+    "id": 12,
+    "name": "Breakfast Burrito",
+    "price": 5.95
+  },
+  {
+    "id": 13,
+    "name": "Margerita",
+    "price": 10.5
+  },
+  {
+    "id": 14,
+    "name": "Pepperoni",
+    "price": 11.5
+  },
+  {
+    "id": 15,
+    "name": "Vegie Garden",
+    "price": 11.25
+  },
+  {
+    "id": 16,
+    "name": "BBQ Chicken",
+    "price": 12.25
+  },
+  {
+    "id": 17,
+    "name": "Garlic Knots",
+    "price": 4.25
+  },
+  {
+    "id": 18,
+    "name": "Fountain Drink",
+    "price": 1.99
+  },
+  {
+    "id": 19,
+    "name": "Chicken Wrap Shawarma",
+    "price": 8.99
+  },
+  {
+    "id": 20,
+    "name": "Falafel Bowl",
+    "price": 8.25
+  },
+  {
+    "id": 21,
+    "name": "Lamb Gyro",
+    "price": 9.5
+  },
+  {
+    "id": 22,
+    "name": "Mezze Platter",
+    "price": 10.5
+  },
+  {
+    "id": 23,
+    "name": "Greek Salad",
+    "price": 6.95
+  },
+  {
+    "id": 24,
+    "name": "Baklava",
+    "price": 3.75
+  }
+]
