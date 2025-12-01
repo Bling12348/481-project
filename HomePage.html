@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Ordering - Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Basic styling for layout -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #e00b0b;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .restaurant-list {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 2rem;
+        }
+        .restaurant {
+            background: #f0f0f0;
+            border-radius: 6px;
+            padding: 1.5rem;
+            width: 40%;
+            text-align: center;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+            transition: box-shadow 0.2s;
+        }
+        .restaurant:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header section -->
+    <header>
+        <h1>Welcome to Smart Online Ordering</h1>
+        <p>What are you in the mood for?</p>
+        <button onclick="window.location.href='login.html'">Customer Login</button>
+        <button onclick="window.location.href='Vendorlogin.html'">Vendor Login</button>
+
+    </header>
+    <div class="container">
+        <!-- Restaurant selection section -->
+        <div class="restaurant-list">
+            <!-- Restaurant 1 -->
+            <div class="restaurant">
+                <!-- Placeholder image for restaurant -->
+                <img src="./Logo/pizzaLogo.png" alt="Pizza Place Logo" class="logo">
+                <h2>Pizza Place</h2>
+                <p>Delicious pizzas, pastas, and more!</p>
+                <!-- Link to Pizza Place menu page -->
+                <button onclick="window.location.href='Menu/pizza.html'">Order Now</button>
+            </div>
+            <!-- Restaurant 2 -->
+            <div class="restaurant">
+                <!-- Placeholder image for restaurant -->
+                <img src="./Logo/" alt="Cafe House Logo" class="logo">
+                <h2>Coffee House</h2>
+                <p>Fresh coffee, and more.</p>
+                <!-- Link to Sushi House menu page -->
+                <button onclick="window.location.href='Menu/cafe.html'">Order Now</button>
+            </div>
+            <!-- Restaurant 3 -->
+            <div class="restaurant">
+                <!-- Placeholder image for restaurant -->
+                <img src="./Logo/" alt="Burgers" class="logo">
+                <h2>Burger Spot</h2>
+                <p>Yummy Burgers and Fries</p>
+                <!-- Link to Sushi House menu page -->
+                <button onclick="window.location.href='Menu/burgers.html'">Order Now</button>
+            </div>
+             <!-- Restaurant 4 -->
+            <div class="restaurant">
+                <!-- Placeholder image for restaurant -->
+                <img src="./Logo/" alt="Shawarma man" class="logo">
+                <h2>Shawarma and More</h2>
+                <p>Fresh Shawarmas</p>
+                <!-- Link to Sushi House menu page -->
+                <button onclick="window.location.href='Menu/mediter.html'">Order Now</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
