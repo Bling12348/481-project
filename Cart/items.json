@@ -1,4 +1,4 @@
-const items = [
+[
   {
     "id": 1,
     "name": "Campus Classic",
@@ -6,7 +6,7 @@ const items = [
   },
   {
     "id": 2,
-    "name": "Spicy Chichecn",
+    "name": "Spicy Chickem",
     "price": 8.49
   },
   {

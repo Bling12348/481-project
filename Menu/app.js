@@ -23,6 +23,15 @@
   });
 })();
 
-function addToCart(){
+let productData;
 
+function initApp() {
+  fetch("/Cart/items.json")
+  .then(response => response.json())
+  .then(data => {
+    productData = data;
+    console.log(productData);
+ });
 }
+
+initApp();
