@@ -43,7 +43,7 @@ function toggleAvailability(id) {
 // PAGE ACTIONS
 // Go to Orders page (already working)
 function goToOrders() {
-    window.location.href = "/VendorOrder/vendor-orders.html";
+    window.location.href = "../VendorOrder/vendor-orders.html";
 }
 
 // Go to Menu Management page
@@ -58,9 +58,11 @@ function goToAccount() {
 
 // LOGOUT FUNCTION
 function logout() {
-    // Clear stored session (if any)
+    // Clear stored session / auth
     localStorage.removeItem("loggedIn");
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
 
     // Redirect to login page
-    window.location.href = "login.html";
+    window.location.href = "vendor_login.html";
 }

@@ -234,29 +234,39 @@ function showToast(message) {
 function logout() {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
-    window.location.href = '../Homepage/login.html';
+    window.location.href = '../Homepage/vendor_login.html';
 }
 
 function checkAuth() {
-    var token = localStorage.getItem('token');
-    var user = localStorage.getItem('user');
-    
-    if (!token) {
+    var token    = localStorage.getItem('token');
+    var user     = localStorage.getItem('user');
+    var loggedIn = localStorage.getItem('loggedIn'); 
+
+    // Allow access if either:
+    //  - you have a token (real auth), or
+    //  - you're marked as logged in (simple front-end auth)
+    if (!token && !loggedIn) {
         alert('Please log in to access this page');
         window.location.href = '../Homepage/login.html';
         return false;
     }
-    
+
     if (user) {
-        var userData = JSON.parse(user);
-        if (userData.role !== 'vendor') {
-            alert('Access denied. Vendor account required.');
-            window.location.href = '../Homepage/login.html';
-            return false;
+        try {
+            var userData = JSON.parse(user);
+            if (userData.role && userData.role !== 'vendor') {
+                alert('Access denied. Vendor account required.');
+                window.location.href = '../Homepage/login.html';
+                return false;
+            }
+        } catch (e) {
+            console.warn('Could not parse user from localStorage:', e);
         }
     }
+
     return true;
 }
+
 
 document.addEventListener('DOMContentLoaded', function() {
     if (checkAuth()) {
