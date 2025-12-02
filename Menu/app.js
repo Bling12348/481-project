@@ -1,29 +1,40 @@
 let productData = []
-let cart = []
 
-initApp();
+initApp()
 
 function initApp() {
+  let initCart = []
   fetch("/Cart/items.json")
   .then(response => response.json())
   .then(data => {
     productData = data;
     sessionStorage.setItem('productData', JSON.stringify(productData))
-    console.log(productData);
-    sessionStorage.setItem("cart")
-    sessionStorage.setItem('cart', JSON.stringify(cart))
+
+    const oldData = sessionStorage.getItem("cart")
+    if (oldData) {
+      const parsedData = JSON.parse(existingData);
+      sessionStorage.setItem('cart', JSON.stringify(newData));
+    } else {
+      sessionStorage.setItem('cart', JSON.stringify(initCart))
+    }
+    
   });
 }
 
 function addToCart(itemId) {
   let inventory = JSON.parse(sessionStorage.getItem("productData"))
   let cart = JSON.parse(sessionStorage.getItem("cart"))
+  console.log(cart)
+  
+  sessionStorage.setItem('cart', JSON.stringify(cart))
+  
   index = cart.length
 
   cart.push(inventory[itemId-1])
   sessionStorage.setItem('cart', JSON.stringify(cart))
   index++
 }
+
 
 /* Tiny cart badge demo using localStorage per-page key */
 (function(){

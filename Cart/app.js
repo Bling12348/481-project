@@ -1,8 +1,6 @@
 const cartContainer = document.querySelector(".cart");
 const priceContainer = document.querySelector(".price-container");
 
-
-
 displayCart();
 displayTotal();
 
@@ -18,6 +16,7 @@ function displayCart(){
     cartContainer.innerHTML = ""; 
 
     cart.forEach((item, index) => {
+        if(item != 999){
         const cartItem = document.createElement("div");
         cartItem.classList.add("cart-item");
         cartItem.innerHTML = `
@@ -30,6 +29,7 @@ function displayCart(){
         </div>
         `;
         cartContainer.appendChild(cartItem);
+        }
     });
 }
 
@@ -38,7 +38,7 @@ function displayTotal(){
     let subtotal=0.0;
     let tax=0.0;
     let total=0.0;
-    cart = JSON.parse(sessionStorage.getItem("cart"))
+    cart = JSON.parse(localStorage.getItem("cart"))
 
     priceContainer.innerHTML = ""; 
 
