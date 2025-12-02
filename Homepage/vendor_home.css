@@ -31,4 +31,20 @@
     font-size: 40px;
     color: #006644;
 }
+.login-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f0f0f0;
+}
+
+.login-box {
+    width: 300px;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.2);
+    text-align: center;
+}
 
