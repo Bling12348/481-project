@@ -265,14 +265,14 @@ function showToast(message) {
 
 function logout() {
   localStorage.removeItem('loggedIn');
-  window.location.href = '../Homepage/vendor_login.html';
+  window.location.href = '../Homepage/login.html';
 }
 
 function checkAuth() {
   const loggedIn = localStorage.getItem('loggedIn');
   if (loggedIn !== 'yes') {
     alert('Please log in to access this page');
-    window.location.href = '../Homepage/vendor_login.html';
+    window.location.href = '../Homepage/login.html';
     return false;
   }
   return true;

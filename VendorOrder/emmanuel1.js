@@ -234,13 +234,13 @@ function showToast(message) {
 function logout() {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
-    window.location.href = '../Homepage/vendor_login.html';
+    window.location.href = '../Homepage/login.html';
 }
 
 function checkAuth() {
     var token = localStorage.getItem('token');
     if (!token) {
-        window.location.href = '../Homepage/vendor_login.html';
+        window.location.href = '../Homepage/login.html';
         return false;
     }
     
@@ -249,7 +249,7 @@ function checkAuth() {
         var userData = JSON.parse(user);
         if (userData.role !== 'vendor') {
             alert('Vendor access required');
-            window.location.href = '../Homepage/vendor_login.html';
+            window.location.href = '../Homepage/login.html';
             return false;
         }
     }
