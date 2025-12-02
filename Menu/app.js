@@ -1,6 +1,5 @@
-let productData = [];
-let cart = [];
-let activeSession;
+let productData = []
+let cart = []
 
 initApp();
 
@@ -11,13 +10,14 @@ function initApp() {
     productData = data;
     sessionStorage.setItem('productData', JSON.stringify(productData))
     console.log(productData);
-    sessionStorage.setItem("cart", "")
+    sessionStorage.setItem("cart")
     sessionStorage.setItem('cart', JSON.stringify(cart))
   });
 }
 
 function addToCart(itemId) {
   let inventory = JSON.parse(sessionStorage.getItem("productData"))
+  let cart = JSON.parse(sessionStorage.getItem("cart"))
   index = cart.length
 
   cart.push(inventory[itemId-1])

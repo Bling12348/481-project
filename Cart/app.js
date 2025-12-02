@@ -1,12 +1,15 @@
 const cartContainer = document.querySelector(".cart");
 const priceContainer = document.querySelector(".price-container");
 
+
+
 displayCart();
 displayTotal();
 
 function displayCart(){
-    let inventory = [];
     let cart = [];
+    let inventory = [];
+    
     inventory = JSON.parse(sessionStorage.getItem("productData"))
     cart = JSON.parse(sessionStorage.getItem("cart"))
     
@@ -64,8 +67,8 @@ function removeFromCart(id){
 
     cart.forEach((item, index) => {
         if(item.id == id){
-            if(cart.length <= 1){
-                cart.pop()
+            if(cart.length <= 1 || index == 0){
+                cart.shift()
                 sessionStorage.setItem('cart', JSON.stringify(cart))
             } else {
                 cart.splice(index,index)
@@ -73,8 +76,6 @@ function removeFromCart(id){
             }
         }
     });
-
-    
 
     /*
     cart.forEach((item, index) => {

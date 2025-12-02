@@ -8,7 +8,7 @@ function displayCart(){
     let inventory = [];
     let cart = [];
     inventory = JSON.parse(sessionStorage.getItem("productData"))
-    cart = JSON.parse(sessionStorage.getItem("cart"))
+    cart = JSON.parse(localStorage.getItem("cart"))
 
     cart.forEach(element => {
         console.log(element)
@@ -36,7 +36,7 @@ function displayTotal(){
     let subtotal=0.0;
     let tax=0.0;
     let total=0.0;
-    cart = JSON.parse(sessionStorage.getItem("cart"))
+    cart = JSON.parse(localStorage.getItem("cart"))
 
     priceContainer.innerHTML = ""; 
 
