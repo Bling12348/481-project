@@ -1,26 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu Management</title>
-    <link rel="stylesheet" href="vendor_home.css">
+
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
 <body>
 
-<nav class="navbar navbar-dark bg-green px-3">
-    <span class="navbar-brand">Menu Management</span>
-    <button class="btn btn-danger" onclick="logout()">Logout</button>
+<nav class="navbar navbar-dark bg-danger px-3">
+    <a class="navbar-brand text-white">Menu Management</a>
+    <button class="btn btn-light" onclick="goBack()">Back to Dashboard</button>
 </nav>
 
-<div class="container mt-4">
-    <h3>Manage Menu Items</h3>
-    <p>This is a placeholder page</p>
+<div class="container mt-5">
 
-    <button class="btn btn-secondary" onclick="window.location.href='vendor_home.html'">
-        Back to Dashboard
-    </button>
+    <h2>Manage Menu Items</h2>
+    <p class="text-muted">Add, edit, delete, and toggle the availability of menu items.</p>
+
+    <button class="btn btn-success mb-3" onclick="openAddItemModal()">+ Add New Item</button>
+    <div id="menuList" class="list-group"></div>
+
+</div>
+<div class="modal fade" id="itemModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header bg-danger text-white">
+        <h5 class="modal-title" id="modalTitle">Add Menu Item</h5>
+      </div>
+
+      <div class="modal-body">
+
+        <label>Name:</label>
+        <input id="itemName" class="form-control mb-3">
+
+        <label>Price:</label>
+        <input id="itemPrice" class="form-control mb-3" type="number" step="0.01">
+
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button id="saveItemBtn" class="btn btn-danger">Save</button>
+      </div>
+
+    </div>
+  </div>
 </div>
 
-<script src="vendor_home.js"></script>
+
+<script src="menu.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

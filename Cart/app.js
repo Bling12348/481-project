@@ -5,8 +5,9 @@ displayCart();
 displayTotal();
 
 function displayCart(){
-    let inventory = [];
     let cart = [];
+    let inventory = [];
+    
     inventory = JSON.parse(sessionStorage.getItem("productData"))
     cart = JSON.parse(sessionStorage.getItem("cart"))
     
@@ -15,6 +16,7 @@ function displayCart(){
     cartContainer.innerHTML = ""; 
 
     cart.forEach((item, index) => {
+        if(item != 999){
         const cartItem = document.createElement("div");
         cartItem.classList.add("cart-item");
         cartItem.innerHTML = `
@@ -27,6 +29,7 @@ function displayCart(){
         </div>
         `;
         cartContainer.appendChild(cartItem);
+        }
     });
 }
 
@@ -35,7 +38,7 @@ function displayTotal(){
     let subtotal=0.0;
     let tax=0.0;
     let total=0.0;
-    cart = JSON.parse(sessionStorage.getItem("cart"))
+    cart = JSON.parse(localStorage.getItem("cart"))
 
     priceContainer.innerHTML = ""; 
 
@@ -64,8 +67,8 @@ function removeFromCart(id){
 
     cart.forEach((item, index) => {
         if(item.id == id){
-            if(cart.length <= 1){
-                cart.pop()
+            if(cart.length <= 1 || index == 0){
+                cart.shift()
                 sessionStorage.setItem('cart', JSON.stringify(cart))
             } else {
                 cart.splice(index,index)
@@ -73,8 +76,6 @@ function removeFromCart(id){
             }
         }
     });
-
-    
 
     /*
     cart.forEach((item, index) => {
