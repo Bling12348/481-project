@@ -21,7 +21,7 @@ function loadMenu() {
 
         li.innerHTML = `
             <span>${item.name} - $${item.price.toFixed(2)}</span>
-            <button 
+            <button
                 class="toggle-btn ${item.available ? 'available' : 'unavailable'}"
                 onclick="toggleAvailability(${item.id})"
             >
@@ -43,7 +43,7 @@ function toggleAvailability(id) {
 // PAGE ACTIONS
 // Go to Orders page (already working)
 function goToOrders() {
-    window.location.href = "burgers.html";
+    window.location.href = "/VendorOrder/vendor-orders.html";
 }
 
 // Go to Menu Management page
