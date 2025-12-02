@@ -1,16 +1,14 @@
 const cartContainer = document.querySelector(".cart");
+const priceContainer = document.querySelector(".price-container");
 
 displayCart();
+displayTotal();
 
 function displayCart(){
     let inventory = [];
     let cart = [];
     inventory = JSON.parse(sessionStorage.getItem("productData"))
     cart = JSON.parse(sessionStorage.getItem("cart"))
-
-    cart.forEach(element => {
-        console.log(element)
-    });
     
     const cartContainer = document.querySelector(".cart");
 
@@ -32,4 +30,31 @@ function displayCart(){
     });
 }
 
+function displayTotal(){
+    let cart = [];
+    let subtotal=0.0;
+    let tax=0.0;
+    let total=0.0;
+    cart = JSON.parse(sessionStorage.getItem("cart"))
 
+    priceContainer.innerHTML = ""; 
+
+    cart.forEach((item, index) => {
+        console.log(item.price)
+        subtotal = subtotal + item.price
+        console.log(subtotal)
+    });
+
+    tax = subtotal * 0.06;
+    total = tax + subtotal;
+
+    const price = document.createElement("div");
+    price.classList.add("price");
+    price.innerHTML = `
+            <p>Subtotal: ${subtotal.toFixed(2)}</p>
+            <p>Tax: ${tax.toFixed(2)}</p>
+            <h3>Total: ${total.toFixed(2)}</h3>
+            <a href="/Checkout/checkout-page.html" class="btn btn-dark position-relative">Proceed to Checkout</a>
+        `;
+    priceContainer.appendChild(price);
+};
