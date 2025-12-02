@@ -1,32 +1,32 @@
-// buttons
+
 let signupBtn = document.getElementById("signupBtn");
 let signinBtn = document.getElementById("signinBtn");
 
-// fields
+
 let nameField = document.getElementById("nameField");
 let title = document.getElementById("title");
 
-// inputs
+
 let nameInput = document.getElementById("name");
 let emailInput = document.getElementById("email");
 let passwordInput = document.getElementById("password");
 
-// error elements
+
 let nameError = document.getElementById("nameError");
 let emailError = document.getElementById("emailError");
 let passwordError = document.getElementById("passwordError");
 
-// load users
+
 let users = JSON.parse(localStorage.getItem("users")) || [];
 
-/* ---------- HELPER ---------- */
+
 function clearErrors() {
     nameError.innerText = "";
     emailError.innerText = "";
     passwordError.innerText = "";
 }
 
-/* ---------- TOGGLE ---------- */
+
 signinBtn.onclick = function () {
     clearErrors();
     nameField.style.maxHeight = "0";
@@ -86,13 +86,13 @@ signupBtn.addEventListener("click", function () {
     emailInput.value = "";
     passwordInput.value = "";
 
-    // success message reuse
+    
     emailError.style.color = "green";
     emailError.innerText = "Account created successfully!";
     setTimeout(() => emailError.style.color = "red", 1500);
 });
 
-/* ---------- SIGN IN ---------- */
+
 signinBtn.addEventListener("click", function () {
     if (signinBtn.classList.contains("disable")) return;
 
