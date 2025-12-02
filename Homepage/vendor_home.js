@@ -46,16 +46,6 @@ function goToOrders() {
     window.location.href = "../VendorOrder/vendor-orders.html";
 }
 
-// Go to Menu Management page
-function goToMenu() {
-    window.location.href = "menu.html";
-}
-
-// Go to Account Settings page
-function goToAccount() {
-    window.location.href = "account.html";
-}
-
 // LOGOUT FUNCTION
 function logout() {
     // Clear stored session / auth
