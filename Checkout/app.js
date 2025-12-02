@@ -133,6 +133,11 @@ function handleCheckout(e) {
 
   sessionStorage.removeItem('cart');
 
-  alert(`Thanks ${studentName}! Your order has been placed.\n\nConfirmation #${order.id}`);
-  window.location.href = '../index.html'; 
+  alert(
+  `Thanks ${studentName}! Your order has been placed.\n\n` +
+  `Your order number is ${order.id}.\n` +
+  `You can track it later on the "Track Order" page from the menu.`
+);
+const trackingUrl = `order-tracking.html?orderId=${order.id}`;
+window.location.href = trackingUrl;
 }
