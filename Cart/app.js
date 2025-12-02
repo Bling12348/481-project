@@ -20,9 +20,9 @@ function displayCart(){
         cartItem.innerHTML = `
         <div class="item-entry row g-4 align-items-center">
             <div class="foodname p-4 col-sm text-center mr-3">${item.name}</div>
-            <div class="price col-sm align-self-center mr-3">${item.price}</div>
+            <div class="price col-sm align-self-center mr-3">${(item.price).toFixed(2)}</div>
             <div class="col-sm align-self-center mr-3">
-                <button class="btn btn-dark btn-sm" data-add>Remove Item</button>
+                <button onClick="removeFromCart(${item.id})" class="rmvbtn btn-dark btn-sm" data-add>Remove Item</button>
             </div>
         </div>
         `;
@@ -40,9 +40,7 @@ function displayTotal(){
     priceContainer.innerHTML = ""; 
 
     cart.forEach((item, index) => {
-        console.log(item.price)
         subtotal = subtotal + item.price
-        console.log(subtotal)
     });
 
     tax = subtotal * 0.06;
@@ -58,3 +56,36 @@ function displayTotal(){
         `;
     priceContainer.appendChild(price);
 };
+
+function removeFromCart(id){
+    let cart = [];
+    cart = JSON.parse(sessionStorage.getItem("cart"))
+    console.log(id)
+
+    cart.forEach((item, index) => {
+        if(item.id == id){
+            if(cart.length <= 1){
+                cart.pop()
+                sessionStorage.setItem('cart', JSON.stringify(cart))
+            } else {
+                cart.splice(index,index)
+                sessionStorage.setItem('cart', JSON.stringify(cart))
+            }
+        }
+    });
+
+    
+
+    /*
+    cart.forEach((item, index) => {
+        if(item.id == id){
+            const cartItem = document.createElement("div");
+            cartItem.classList.add("cart-item");
+            cartItem.innerHTML = ``
+        }
+    });
+    */
+
+    displayCart();
+    displayTotal();
+}
