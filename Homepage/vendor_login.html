@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In and Sign Up Form</title>
+    <link rel="stylesheet" href="vendor_login_Style.css">
+    <script src="https://kit.fontawesome.com/9616fb1ec8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="container">
+     <div class="form-box">
+        <h1 id="title">Sign Up</h1>
+        <form onsubmit="return false;">
+            <div class="input-group">
+
+                <div class="input-field" id="nameField">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" id="name" placeholder="Vendor Name">
+                </div>
+                <small class="error" id="nameError"></small>
+
+                <div class="input-field">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" id="email" placeholder="Email">
+                </div>
+                <small class="error" id="emailError"></small>
+
+                <div class="input-field">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="password" placeholder="Password">
+                </div>
+                <small class="error" id="passwordError"></small>
+
+                <p>Lost password <a href="#">Click Here!</a></p>
+            </div>
+
+            <div class="btn-field">
+                <button type="button" id="signupBtn">Sign up</button>
+                <button type="button" id="signinBtn" class="disable">Sign in</button>
+            </div>
+        </form>
+     </div>
+</div>
+
+<script src="vendor_auth.js"></script>
+</body>
+</html>
