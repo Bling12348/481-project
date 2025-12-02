@@ -21,7 +21,7 @@ function loadMenu() {
 
         li.innerHTML = `
             <span>${item.name} - $${item.price.toFixed(2)}</span>
-            <button
+            <button 
                 class="toggle-btn ${item.available ? 'available' : 'unavailable'}"
                 onclick="toggleAvailability(${item.id})"
             >
@@ -43,7 +43,7 @@ function toggleAvailability(id) {
 // PAGE ACTIONS
 // Go to Orders page (already working)
 function goToOrders() {
-    window.location.href = "../VendorOrder/vendor-orders.html";
+    window.location.href = "burgers.html";
 }
 
 // Go to Menu Management page
@@ -58,11 +58,9 @@ function goToAccount() {
 
 // LOGOUT FUNCTION
 function logout() {
-    // Clear stored session / auth
+    // Clear stored session (if any)
     localStorage.removeItem("loggedIn");
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
 
     // Redirect to login page
-    window.location.href = "vendor_login.html";
+    window.location.href = "login.html";
 }
