@@ -12,12 +12,11 @@ function initApp() {
 
     const oldData = sessionStorage.getItem("cart")
     if (oldData) {
-      const parsedData = JSON.parse(existingData);
       sessionStorage.setItem('cart', JSON.stringify(newData));
     } else {
       sessionStorage.setItem('cart', JSON.stringify(initCart))
     }
-    
+    console.log("Initalized!")
   });
 }
 

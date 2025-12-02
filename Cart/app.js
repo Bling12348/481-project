@@ -38,11 +38,12 @@ function displayTotal(){
     let subtotal=0.0;
     let tax=0.0;
     let total=0.0;
-    cart = JSON.parse(localStorage.getItem("cart"))
+    cart = JSON.parse(sessionStorage.getItem("cart"))
 
     priceContainer.innerHTML = ""; 
 
     cart.forEach((item, index) => {
+        console.log(item.price)
         subtotal = subtotal + item.price
     });
 

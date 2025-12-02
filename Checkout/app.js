@@ -41,9 +41,9 @@ function displayTotal(){
     priceContainer.innerHTML = ""; 
 
     cart.forEach((item, index) => {
-        console.log(item.price)
+        //console.log(item.price)
         subtotal = subtotal + item.price
-        console.log(subtotal)
+        //console.log(subtotal)
     });
 
     tax = subtotal * 0.06;
@@ -57,4 +57,4 @@ function displayTotal(){
             <h3>Total: ${total.toFixed(2)}</h3>
         `;
     priceContainer.appendChild(price);
-};
+}
